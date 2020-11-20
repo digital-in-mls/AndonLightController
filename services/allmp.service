@@ -1,0 +1,14 @@
+[Unit]
+Description=Andon Light Controler Lamp Status Background Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 -u alctrl_lmp.py
+WorkingDirectory=/home/pi/alctrl
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target

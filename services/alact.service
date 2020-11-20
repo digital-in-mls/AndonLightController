@@ -1,0 +1,14 @@
+[Unit]
+Description=Andon Light Controler Motion Activity Background Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 -u alctrl_act_ss.py
+WorkingDirectory=/home/pi/alctrl
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
